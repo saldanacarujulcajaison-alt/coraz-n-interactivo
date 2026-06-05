@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día Papá</title>
+    <style>
+        /* Estilos base del fondo negro */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden; /* Evita barras de desplazamiento por la lluvia */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            text-align: center;
+            position: relative;
+            z-index: 10; /* Se mantiene por encima de la lluvia */
+        }
+
+        /* Tu gran corazón neón parpadeante */
+        .corazon-principal {
+            font-size: 150px;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f;
+            animation: parpadeo 1.5s infinite alternate;
+            margin-bottom: 20px;
+            transition: color 0.5s ease, text-shadow 0.5s ease;
+        }
+
+        /* Animación de parpadeo original */
+        @keyframes parpadeo {
+            0% { opacity: 0.8; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.05); }
+        }
+
+        /* Textos con brillo */
+        h1 {
+            font-size: 45px;
+            text-transform: uppercase;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+            margin: 10px 0;
+        }
+
+        p {
+            font-size: 24px;
+            color: #ff66b2;
+            text-shadow: 0 0 8px #ff66b2;
+            margin-bottom: 30px;
+        }
+
+        /* Botón elegante sorpresa */
+        .btn-sorpresa {
+            background: transparent;
+            color: #fff;
+            border: 2px solid #ff007f;
+            padding: 12px 30px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 0 10px #ff007f;
+            transition: all 0.3s ease;
+        }
+
+        .btn-sorpresa:hover {
+            background-color: #ff007f;
+            box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f;
+            transform: scale(1.1);
+        }
+
+        /* La carta oculta con tu mensaje */
+        .carta-oculta {
+            display: none; /* Oculta al principio */
+            max-width: 400px;
+            margin: 20px auto 0 auto;
+            padding: 20px;
+            background: rgba(255, 0, 127, 0.1);
+            border: 1px solid #ff007f;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(255, 0, 127, 0.5);
+            animation: aparecer 0.8s ease forwards;
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .carta-oculta h2 {
+            font-size: 24px;
+            color: #ff007f;
+            margin-top: 0;
+        }
+
+        .carta-oculta p {
+            font-size: 18px;
+            color: #fff;
+            line-height: 1.5;
+            text-shadow: none;
+        }
+
+        /* Estilos de los corazoncitos que caen */
+        .corazon-caida {
+            position: absolute;
+            top: -20px;
+            color: rgba(255, 0, 127, 0.7);
+            font-size: 20px;
+            text-shadow: 0 0 5px #ff007f;
+            pointer-events: none;
+            animation: caer linear infinite;
+        }
+
+        @keyframes caer {
+            to {
+                transform: translateY(105vh) translateX(20px) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor">
+        <!-- Puedes usar la figura del corazón original o este emoji gigante con el estilo neón -->
+        <div id="corazonGrande" class="corazon-principal">❤️</div>
+        <h1>Feliz Día Papá</h1>
+        <p>¡Te quiero mucho!</p>
+        
+        <!-- El nuevo botón interactivo -->
+        <button id="btnSorpresa" class="btn-sorpresa" onclick="mostrarSorpresa()">Haz clic aquí, papá</button>
+
+        <!-- El mensaje oculto que aparecerá -->
+        <div id="cartaSorpresa" class="carta-oculta">
+            <h2>¡Gracias por todo, Papá!</h2>
+            <p>Eres mi mayor ejemplo, el que siempre me apoya y me guía. Gracias por tus consejos, tu esfuerzo diario y por estar siempre para mí. ¡Espero que pases un día increíble porque te mereces lo mejor del mundo!</p>
+        </div>
+    </div>
+
+    <!-- Conexión con el archivo de funciones mágicas -->
+    <script src="script.js"></script>
+</body>
+</html>
