@@ -9,12 +9,30 @@ function mostrarSorpresa() {
     corazon.style.color = '#00f0ff';
     corazon.style.textShadow = '0 0 10px #00f0ff, 0 0 20px #00f0ff, 0 0 40px #00f0ff';
 
-    // Oculta el botón para que ya no estorbe
-    const boton = document.getElementById('btnSorpresa');
-    boton.style.display = 'none';
+    // Oculta el botón, el título y el subtítulo para dejar limpia la pantalla
+    document.getElementById('btnSorpresa').style.display = 'none';
+    document.getElementById('tituloPrincipal').style.display = 'none';
+    document.getElementById('subtituloPrincipal').style.display = 'none';
 }
 
-// 2. LÓGICA PARA LA LLUVIA MÁGICA DE CORAZONES
+// NUEVO: 2. FUNCIÓN PARA EL BOTÓN ATRÁS
+function volverAtras() {
+    // Oculta la carta con el mensaje
+    const carta = document.getElementById('cartaSorpresa');
+    carta.style.display = 'none';
+
+    // Regresa el corazón grande a su color rosa neón original
+    const corazon = document.getElementById('corazonGrande');
+    corazon.style.color = '#ff007f';
+    corazon.style.textShadow = '0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 40px #ff007f';
+
+    // Vuelve a mostrar el botón, el título y el subtítulo principal
+    document.getElementById('btnSorpresa').style.display = 'inline-block';
+    document.getElementById('tituloPrincipal').style.display = 'block';
+    document.getElementById('subtituloPrincipal').style.display = 'block';
+}
+
+// 3. LÓGICA PARA LA LLUVIA MÁGICA DE CORAZONES
 function crearCorazonFugaz() {
     const corazon = document.createElement('div');
     corazon.classList.add('corazon-caida');
