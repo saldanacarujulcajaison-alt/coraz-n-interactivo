@@ -25,6 +25,8 @@
             text-align: center;
             position: relative;
             z-index: 10; /* Se mantiene por encima de la lluvia */
+            padding: 20px;
+            box-sizing: border-box;
         }
 
         /* Tu gran corazón neón parpadeante */
@@ -59,8 +61,8 @@
             margin-bottom: 30px;
         }
 
-        /* Botón elegante sorpresa */
-        .btn-sorpresa {
+        /* Botón elegante sorpresa y atrás */
+        .btn-sorpresa, .btn-atras {
             background: transparent;
             color: #fff;
             border: 2px solid #ff007f;
@@ -73,10 +75,24 @@
             transition: all 0.3s ease;
         }
 
-        .btn-sorpresa:hover {
+        .btn-sorpresa:hover, .btn-atras:hover {
             background-color: #ff007f;
             box-shadow: 0 0 20px #ff007f, 0 0 40px #ff007f;
             transform: scale(1.1);
+        }
+
+        /* Estilo específico para el botón atrás (separación) */
+        .btn-atras {
+            margin-top: 15px;
+            font-size: 16px;
+            padding: 8px 25px;
+            border-color: #ff66b2;
+            box-shadow: 0 0 8px #ff66b2;
+        }
+        
+        .btn-atras:hover {
+            background-color: #ff66b2;
+            box-shadow: 0 0 20px #ff66b2;
         }
 
         /* La carta oculta con tu mensaje */
@@ -108,6 +124,7 @@
             color: #fff;
             line-height: 1.5;
             text-shadow: none;
+            margin-bottom: 15px;
         }
 
         /* Estilos de los corazoncitos que caen */
@@ -131,22 +148,20 @@
 <body>
 
     <div class="contenedor">
-        <!-- Puedes usar la figura del corazón original o este emoji gigante con el estilo neón -->
         <div id="corazonGrande" class="corazon-principal">❤️</div>
-        <h1>Feliz Día Papá</h1>
-        <p>¡Te quiero mucho!</p>
+        <h1 id="tituloPrincipal">Feliz Día Papá</h1>
+        <p id="subtituloPrincipal">¡Te quiero mucho!</p>
         
-        <!-- El nuevo botón interactivo -->
         <button id="btnSorpresa" class="btn-sorpresa" onclick="mostrarSorpresa()">Haz clic aquí, papá</button>
 
-        <!-- El mensaje oculto que aparecerá -->
         <div id="cartaSorpresa" class="carta-oculta">
             <h2>¡Gracias por todo, Papá!</h2>
             <p>Eres mi mayor ejemplo, el que siempre me apoya y me guía. Gracias por tus consejos, tu esfuerzo diario y por estar siempre para mí. ¡Espero que pases un día increíble porque te mereces lo mejor del mundo!</p>
+            
+            <button class="btn-atras" onclick="volverAtras()">Atrás</button>
         </div>
     </div>
 
-    <!-- Conexión con el archivo de funciones mágicas -->
     <script src="script.js"></script>
 </body>
 </html>
